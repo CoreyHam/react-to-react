@@ -4,6 +4,7 @@ import { getData } from '../utils/data';
 
 export default function Wizards() {
   const ENDPOINT = 'Wizards';
+  const URL = 'https://wizard-world-api.herokuapp.com/';
   const [wizards, setWizards] = useState([]);
   
   useEffect(() => {
@@ -11,7 +12,7 @@ export default function Wizards() {
     if (data.length > 0) {
       setWizards(data);
     } else {
-      getData(ENDPOINT)
+      getData(URL,ENDPOINT)
         .then((data) => {
           setWizards(data);
           setLocalStorage(ENDPOINT, data);

@@ -15,7 +15,8 @@ function App() {
         <Link to="/houses">Houses</Link> |{" "}
         <Link to="/elixirs">Elixirs</Link> |{" "}
         <Link to="/ingredients">Ingredients</Link> |{" "}
-        <Link to="/wizards">Wizards</Link>
+        <Link to="/wizards">Wizards</Link> |{" "}
+        <Link to="/characters">Characters</Link>
       </nav>
       <Outlet />
     </div>

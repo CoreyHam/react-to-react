@@ -4,6 +4,7 @@ import { getData } from '../utils/data';
 
 export default function Houses() {
   const ENDPOINT = 'Houses';
+  const URL = 'https://wizard-world-api.herokuapp.com/';
   const [houses, setHouses] = useState([]);
   
   useEffect(() => {
@@ -11,7 +12,7 @@ export default function Houses() {
     if (data.length > 0) {
       setHouses(data);
     } else {
-      getData(ENDPOINT)
+      getData(URL,ENDPOINT)
         .then((data) => {
           setHouses(data);
           setLocalStorage(ENDPOINT, data);

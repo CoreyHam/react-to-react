@@ -4,6 +4,7 @@ import { getData } from '../utils/data';
 
 export default function Elixirs() {
   const ENDPOINT = 'Elixirs';
+  const URL = 'https://wizard-world-api.herokuapp.com/';
   const [elixirs, setElixirs] = useState([]);
 
   useEffect(() => {
@@ -11,7 +12,7 @@ export default function Elixirs() {
     if (data.length > 0) {
       setElixirs(data);
     } else {
-      getData(ENDPOINT)
+      getData(URL,ENDPOINT)
         .then((data) => {
           setElixirs(data);
           setLocalStorage(ENDPOINT, data);
