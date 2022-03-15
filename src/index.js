@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from 'react-dom';
+import ReactDOM from 'react-dom';
 import {
   BrowserRouter,
   Route,
@@ -9,12 +9,14 @@ import {
 import './index.css';
 
 import App from './App';
+import Elixirs from './routes/Elixirs';
+import Houses from './routes/Houses';
 import Ingredients from './routes/Ingredients';
 import Wizards from './routes/Wizards';
 
-const rootElement = document.getElementById("app"); // root element is in the index.html
+let rootElement = document.getElementById("root"); // root element is in the index.html
 
-render(
+ReactDOM.render(
   <BrowserRouter>
     <Routes>
       <Route path="/" element={<App />}>

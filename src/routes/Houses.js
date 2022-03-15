@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { getData } from '../utils/data';
 import { getLocalStorage, setLocalStorage } from '../utils/localStorage';
+import { getData } from '../utils/data';
 
 export default function Houses() {
   const ENDPOINT = 'Houses';
@@ -12,9 +12,9 @@ export default function Houses() {
       setHouses(data);
     } else {
       getData(ENDPOINT)
-        .then(() => {
-          setHouses();
-          setLocalStorage();
+        .then((data) => {
+          setHouses(data);
+          setLocalStorage(ENDPOINT, data);
         })
     }
   }, []);

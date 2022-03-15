@@ -1,10 +1,11 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+import { getLocalStorage, setLocalStorage } from '../utils/localStorage';
 import { getData } from '../utils/data';
-import { getLocalStorage } from '../utils/localStorage';
 
 export default function Elixirs() {
   const ENDPOINT = 'Elixirs';
-  
+  const [elixirs, setElixirs] = useState([]);
+
   useEffect(() => {
     let data = getLocalStorage(ENDPOINT);
     if (data.length > 0) {
